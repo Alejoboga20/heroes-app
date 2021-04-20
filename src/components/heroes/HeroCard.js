@@ -15,7 +15,7 @@ const HeroCard = ({
         <div className='col-md-4'>
           <img
             src={`./assets/heroes/${id}.jpg`}
-            className='card-img'
+            className='card-img animate__animated animate__fadeIn'
             alt={superhero}
           />
         </div>
