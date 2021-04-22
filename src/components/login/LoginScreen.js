@@ -7,7 +7,7 @@ const LoginScreen = ({ history }) => {
 
   const handleLogin = () => {
     dispatch({ type: types.login, payload: { name: 'Alejo' } });
-    history.replace('./');
+    history.replace('/');
   };
 
   return (
