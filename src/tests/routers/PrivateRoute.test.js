@@ -22,4 +22,17 @@ describe('PrivateRoute tests', () => {
     expect(wrapper.find('span').exists()).toBe(true);
     expect(localStorage.setItem).toHaveBeenCalledWith('lastPath', '/marvel');
   });
+
+  test('should not show component if not authenticated', () => {
+    const wrapper = mount(
+      <MemoryRouter>
+        <PrivateRoute
+          isAuth={false}
+          component={() => <span>Done</span>}
+          {...props}
+        />
+      </MemoryRouter>
+    );
+    expect(wrapper.find('span').exists()).toBe(false);
+  });
 });
