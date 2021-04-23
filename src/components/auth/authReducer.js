@@ -9,6 +9,7 @@ export const authReducer = (state = {}, action) => {
       return { logged: false };
 
     default:
+      return state;
       break;
   }
 };
