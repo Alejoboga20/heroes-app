@@ -4,8 +4,10 @@ import { PrivateRoute } from '../../routers/PrivateRoute';
 
 describe('PrivateRoute tests', () => {
   const props = {
-    location: { patname: '/marvel' }
+    location: { pathname: '/marvel' }
   };
+
+  Storage.prototype.setItem = jest.fn();
 
   test('should should component if authenticated and save in localstorage', () => {
     const wrapper = mount(
@@ -18,5 +20,6 @@ describe('PrivateRoute tests', () => {
       </MemoryRouter>
     );
     expect(wrapper.find('span').exists()).toBe(true);
+    expect(localStorage.setItem).toHaveBeenCalledWith('lastPath', '/marvel');
   });
 });
