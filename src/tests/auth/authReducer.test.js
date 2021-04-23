@@ -3,7 +3,7 @@ import { types } from '../../components/types/types';
 
 describe('authReducer Tests', () => {
   const userName = 'Test';
-  const initialState = {};
+  const initialState = { logged: false };
 
   const loginAction = {
     type: types.login,
