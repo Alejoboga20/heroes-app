@@ -52,7 +52,7 @@ Array [
         className="navbar-nav ml-auto"
       >
         <span
-          className="nav-item nav-link"
+          className="nav-item nav-link text-info"
         >
           Test
         </span>

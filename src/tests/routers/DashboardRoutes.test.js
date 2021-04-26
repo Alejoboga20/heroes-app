@@ -19,6 +19,6 @@ describe('DashboardRoutes tests', () => {
       </AuthContext.Provider>
     );
     expect(wrapper).toMatchSnapshot();
-    expect(wrapper.find('span').text().trim()).toBe('Test');
+    expect(wrapper.find('.text-info').text().trim()).toBe('Test');
   });
 });
