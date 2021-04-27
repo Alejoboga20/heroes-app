@@ -7,7 +7,7 @@ import { getHeroesByName } from '../../selectors/getHeroesByName';
 
 const SearchScreen = ({ history }) => {
   const location = useLocation();
-  const { q } = queryString.parse(location.search);
+  const { q = '' } = queryString.parse(location.search);
 
   const [formValues, handleInputChange] = useForm({ searchText: q });
   const { searchText } = formValues;
@@ -52,9 +52,9 @@ const SearchScreen = ({ history }) => {
           <h4>Results</h4>
           <hr />
 
-          {q === '' && <div className='aler alert-info'>Search a Hero</div>}
+          {q === '' && <div className='alert alert-info'>Search a Hero</div>}
           {q !== '' && heroesFiltered.length === 0 && (
-            <div className='aler alert-danger'>There is no hero with {q}</div>
+            <div className='alert alert-danger'>There is no hero with {q}</div>
           )}
 
           {heroesFiltered.map((hero) => (
